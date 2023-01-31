@@ -1,0 +1,24 @@
+<html>
+<head>
+    <title>Tabela Pandas</title>
+</head>
+<body>
+    <h1>Lista produktów</h1>
+    <table border="1">
+        <thead>
+            {% for column in df.columns %}
+            <th>{{ column }}</th>
+            {% endfor %}
+        </thead>
+        <tbody>
+            {% for row in df.iterrows() %}
+            <tr>
+                {% for value in row[1] %}
+                <td>{{ value }}</td>
+                {% endfor %}
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
